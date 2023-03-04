@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="CoarseFineLocation">
+    <!--
+        icon : shape of the icon on phone, before api level 25 it is only square , after api level 25+ it is either square, circle etc.
+               We can choose own app icon and place it in mipmap folder. and replace ic_launcher to new one.
+        label : how android application name is seen on the phone. TO change the app name migrate to res/values/strings.xml file and rename there.
+
+        All our activities are defined in this file only.- Here now we have only one activity and
+        is main activity and category is LAUNCHER (this activity launches on start of app).
+
+        Permissions - We can request user permissions from this file - wifi , location etc.
+
+        Screen orientation - we can specify screen orientation - potrait / landscape here.
+        We can update theme as well @style/Theme.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstProject"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
